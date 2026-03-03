@@ -1,52 +1,36 @@
-# Project Report for Vault Document Management Application
+# Project Documentation
 
-## Architecture Diagrams
+## System Architecture
 ```mermaid
 graph TD;
-    A[Client] --> B[API Gateway];
-    B --> C[Authentication Service];
-    B --> D[Document Service];
-    B --> E[User Service];
-    D --> F[Database];
-    E --> F;
+    A[Client] --> B[Server];
+    B --> C[Database];
+    B --> D[API];
 ```
 
-## Database Schema
+## Database Design
 ```mermaid
 erDiagram
     USERS {
-        int id PK
-        string name
-        string email
-        string password
+        int id PK 
+        string name 
+        string email 
     }
-
-    DOCUMENTS {
-        int id PK
-        string title
-        string content
-        int user_id FK
+    POSTS {
+        int id PK 
+        string title 
+        string content 
+        int user_id FK 
     }
-
-    USERS ||--o{ DOCUMENTS : creates
+    USERS ||--o{ POSTS : creates
 ```
 
-## Workflow Diagrams
+## User Workflows
 ```mermaid
 flowchart TD
-    A[Start] --> B[User Uploads Document]
-    B --> C[Document is Processed]
-    C --> D[Document Stored in Database]
-    D --> E[Notify User]
-    E --> F[End]
-```
-
-## Use Cases
-```mermaid
-%%{init: {'theme': 'default'}}%%
-   sequenceDiagram
-       participant User
-       participant System
-       User->>System: Upload Document
-       System-->>User: Confirm Upload
+    A[User Login] --> B[Dashboard]
+    B --> C[Create Post]
+    B --> D[View Posts]
+    C --> E[Post Created]
+    D --> F[Post Details]
 ```
