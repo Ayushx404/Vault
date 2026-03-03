@@ -1,6 +1,6 @@
-# Receipt Vault: Modern Asset & Warranty Management
+# Vault: Smart Expense & Warranty Tracker
 
-**Receipt Vault** is a high-performance, modern Android application
+**Vault** is a high-performance, modern Android application
 built with Jetpack Compose. It empowers users to digitize, organize, and
 track their receipts, warranties, and subscriptions in a secure,
 cloud-synced environment.
